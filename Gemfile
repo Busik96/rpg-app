@@ -30,7 +30,7 @@ group :development, :test do
   gem 'annotate'
   gem 'database_cleaner'
   gem 'dotenv-rails'
-  gem 'factory_bot'
+  gem "factory_bot_rails"
   gem 'faker'
   gem 'pry-rails'
   gem 'rails-controller-testing'
