@@ -3,7 +3,7 @@
 module API
   module V1
     module Users
-      class Create < Root
+      class Create < Base
         desc 'Creates new users'
         params do
           requires :email, type: String

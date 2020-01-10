@@ -17,7 +17,8 @@ module API
         end
       end
 
-      mount API::V1::Users::Base
+      mount Users::Base
+      mount Characters::Base
     end
   end
 end

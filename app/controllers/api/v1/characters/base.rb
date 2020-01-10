@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+module API
+  module V1
+    module Characters
+      class Base < Root
+        namespace :characters do
+          mount Characters::Create
+          mount Characters::Index
+
+          route_param :id do
+            helpers do
+              def current_character
+                @current_character ||= current_user.characters.find(params[:id])
+              end
+            end
+
+            mount Show
+            mount Destroy
+          end
+        end
+      end
+    end
+  end
+end

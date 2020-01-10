@@ -8,7 +8,6 @@ module Characters
 
     attributes :name, :description, :inventory_size, :stats
 
-    belongs_to :user, serializer: Users::DetailedSerializer
     has_many :character_items, serializer: CharacterItems::DetailedSerializer
     has_many :items, serializer: Items::DetailedSerializer
   end
