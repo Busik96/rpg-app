@@ -4,7 +4,6 @@ module API
   module V1
     module Characters
       class Create < Base
-
         before { authorize! }
 
         desc 'Creates new characters'

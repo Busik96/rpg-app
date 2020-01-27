@@ -12,7 +12,6 @@ module API
             route_param :character_item_id do
               helpers do
                 def current_character_item
-                  binding.pry
                   @current_character_item ||=
                     current_character.character_items.find(
                       params[:character_item_id]

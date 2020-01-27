@@ -4,7 +4,6 @@ module API
   module V1
     module Characters
       class Destroy < Characters::Base
-
         before { authorize! }
 
         desc 'Deletes characters'
