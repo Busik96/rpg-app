@@ -4,10 +4,9 @@ module API
   module V1
     module Characters
       class Index < Characters::Base
-
         before { authorize! }
 
-        desc 'Deletes characters'
+        desc 'Returns all characters'
         get do
           characters = Character.all
           status 200
