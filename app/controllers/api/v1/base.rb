@@ -19,6 +19,7 @@ module API
 
       mount Users::Base
       mount Characters::Base
+      mount Items::Base
     end
   end
 end
