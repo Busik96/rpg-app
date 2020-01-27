@@ -1,13 +1,11 @@
 # frozen_string_literal: true
 
-module Api
-  class Base < Grape::API
+module API
+  class Root < Grape::API
     format :json
     prefix :api
 
-    get :test do
-      { status: :ok }
-    end
+    mount ::API::V1::Base
 
     add_swagger_documentation
   end
