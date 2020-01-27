@@ -5,7 +5,7 @@
 # Table name: character_items
 #
 #  id           :bigint           not null, primary key
-#  amout        :integer
+#  amount       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  character_id :bigint           not null
@@ -24,8 +24,14 @@
 #
 
 class CharacterItem < ApplicationRecord
+  MAX_ITEM_STACK = 10
+
   belongs_to :character
   belongs_to :item
 
-  validates :amout, presence: true, numericality: { minimum: 1, maximum: 10 }
+  validates :amount, presence: true, numericality: { minimum: 1, maximum: MAX_ITEM_STACK }
+
+  def left_space
+    MAX_ITEM_STACK - amount
+  end
 end

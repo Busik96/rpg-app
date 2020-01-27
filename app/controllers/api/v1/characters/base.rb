@@ -17,6 +17,7 @@ module API
 
             mount Show
             mount Destroy
+            mount Inventory::Base
           end
         end
       end
