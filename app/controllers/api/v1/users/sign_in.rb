@@ -13,7 +13,7 @@ module API
           user = User.find_for_database_authentication(email: params[:email])
           if user && user.valid_for_authentication? { user.valid_password?(params[:password]) }
             api_key = ::Users::TokenGenerator.new.call(user)
-            status 200
+            status 201
             { data: { token: api_key } }
           else
             status 422
