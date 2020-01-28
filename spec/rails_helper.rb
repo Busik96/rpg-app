@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter '/admin'
+  add_filter '/channels'
+end
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -13,6 +16,7 @@ if Rails.env.production?
   abort('The Rails environment is running in production mode!')
 end
 require 'rspec/rails'
+require_relative 'support/api_helpers'
 # Add additional requires below this line. Rails is not loaded until this point!
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -24,6 +28,8 @@ end
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
+
+require_relative 'support/api_helpers'
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -70,6 +76,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  config.include ApiHelpers, type: :request
 
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!

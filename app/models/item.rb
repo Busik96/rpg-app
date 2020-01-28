@@ -7,6 +7,7 @@
 #  id          :bigint           not null, primary key
 #  description :text
 #  name        :string
+#  reusable    :boolean          default(FALSE)
 #  stats       :jsonb
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
