@@ -6,9 +6,8 @@ module CharacterItems
 
     set_type :character_item
 
-    attributes :amout
+    attributes :amount
 
     belongs_to :item, serializer: Items::DetailedSerializer
-    belongs_to :character, serializer: Characters::DetailedSerializer
   end
 end

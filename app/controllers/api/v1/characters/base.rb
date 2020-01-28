@@ -5,8 +5,8 @@ module API
     module Characters
       class Base < Root
         namespace :characters do
-          mount Characters::Create
-          mount Characters::Index
+          mount Create
+          mount Index
 
           route_param :id do
             helpers do
@@ -17,6 +17,7 @@ module API
 
             mount Show
             mount Destroy
+            mount Inventory::Base
           end
         end
       end

@@ -4,7 +4,6 @@ module API
   module V1
     module Characters
       class Show < Characters::Base
-
         before { authorize! }
 
         desc 'Shows detailed character info'

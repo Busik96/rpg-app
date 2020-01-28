@@ -5,7 +5,7 @@
 # Table name: character_items
 #
 #  id           :bigint           not null, primary key
-#  amout        :integer
+#  amount       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  character_id :bigint           not null
