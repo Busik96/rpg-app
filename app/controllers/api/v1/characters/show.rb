@@ -8,6 +8,7 @@ module API
 
         desc 'Shows detailed character info'
         get do
+          status 200
           ::Characters::DetailedSerializer.new(current_character)
         end
       end
