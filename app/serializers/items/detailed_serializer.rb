@@ -6,6 +6,6 @@ module Items
 
     set_type :item
 
-    attributes :name, :description, :stats
+    attributes :name, :description, :stats, :reusable
   end
 end
