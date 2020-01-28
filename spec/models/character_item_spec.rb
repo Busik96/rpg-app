@@ -28,9 +28,9 @@ require 'rails_helper'
 RSpec.describe CharacterItem, type: :model do
   let!(:user) { create :user }
   let(:character) { create :character, user: user }
-  let(:item) { create :item, character_items: character_item }
+  let(:item) { create :item }
   let(:character_item) { create :character_item,
-                         items: item, character: character }
+                         item: item, character: character }
   subject { described_class.new }
 
   describe 'associations' do
@@ -41,5 +41,11 @@ RSpec.describe CharacterItem, type: :model do
   describe 'validations' do
     it { is_expected.to validate_presence_of(:amount) }
     it { is_expected.to validate_numericality_of(:amount) }
+  end
+
+  describe 'left_space method' do
+    it 'returns left space value' do
+      expect(character_item.left_space).to eq(CharacterItem::MAX_ITEM_STACK - character_item.amount)
+    end
   end
 end
