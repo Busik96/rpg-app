@@ -31,5 +31,6 @@ FactoryBot.define do
     confirmed_at { Faker::Date.backward(days: 14) }
     email { Faker::Internet.free_email }
     password { Faker::Internet.password }
+    api_key { '211f6029-42b8-4c88-bc95-38b212705d13' }
   end
 end

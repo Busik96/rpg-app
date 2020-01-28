@@ -19,5 +19,9 @@ FactoryBot.define do
     description { Faker::Lorem.paragraph }
     stats { { id: 'stats' } }
   end
+
+  trait :reusable do
+    reusable { true }
+  end
 end
 

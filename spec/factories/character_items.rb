@@ -26,6 +26,6 @@
 
 FactoryBot.define do
   factory :character_item do
-    amout { Faker::Number.number(digits: 1) }
+    amount { Faker::Number.number(digits: 1) }
   end
 end
