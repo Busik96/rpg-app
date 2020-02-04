@@ -10,7 +10,7 @@ module Inventory
         current_character_item.amount -= 1
         current_character_item.save
       else
-        current_character_item.destroy
+        current_character_item.destroy!
       end
     end
   end
